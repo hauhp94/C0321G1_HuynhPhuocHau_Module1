@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập máy tính</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<form>
+    <table>
+        <tr>
+            <td><input type="number" name="sothunhat" id="so1" value="12"></td>
+            <td><input type="number" name="sothuhai" id="so2" value="12"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="cong()">Addition(+)</button>
+                <button type="button" onclick="tru()">Subtraction(-)</button>
+            </td>
+            <td>
+                <button type="button" onclick="nhan()">Multiplication(X)</button>
+                <button type="button" onclick="chia()">Division(/)</button>
+            </td>
+        </tr>
+        <tr>
+            <td><p id="kq">Result: </p></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function cong() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = parseFloat(a) + parseFloat(b);
+       // document.write("kết quả là " + c);
+        // alert("kết quả là" + c);
+        document.getElementById("kq").innerHTML= "Result: "+ c;
+
+    }
+
+    function tru() {
+        let a = document.getElementById("so1").value;
+        let b =document.getElementById("so2").value;
+        let c = parseFloat(a) - parseFloat(b);
+        document.getElementById("kq").innerHTML= "Result: "+ c;
+            }
+    function nhan() {
+        let a = document.getElementById("so1").value;
+        let b =document.getElementById("so2").value;
+        let c = parseFloat(a) * parseFloat(b);
+        document.getElementById("kq").innerHTML= "Result: "+ c;
+    }
+    function chia() {
+        let a = document.getElementById("so1").value;
+        let b =document.getElementById("so2").value;
+        let c = parseFloat(a) / parseFloat(b);
+        document.getElementById("kq").innerHTML= "Result: "+ c;
+    }
+</script>
+</body>
+</html>
