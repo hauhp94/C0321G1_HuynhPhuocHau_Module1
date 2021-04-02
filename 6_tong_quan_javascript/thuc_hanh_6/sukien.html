@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su kien</title>
+</head>
+<body>
+<input type="text" placeholder="nhập 1" id="nhap1">
+<input type="text" placeholder="nhập 2" id="nhap2">
+<input type="button" value="tính tổng" onclick="tinh()">
+<br>
+sự kiện onclick
+<script>
+    function tinh() {
+let a = document.getElementById("nhap1").value;
+let b = document.getElementById("nhap2").value;
+let tong = parseInt(a)*parseInt(b);
+document.write("tích 2 số là: "+tong)
+    }
+</script>
+
+</body>
+</html>
