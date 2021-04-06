@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6: Giải phương trình bậc 1.</title>
+</head>
+<body>
+<p>Bài 6: Giải phương trình bậc 1 ax+b=0 </p>
+<form>
+    <input type="text" placeholder="Nhập a" id="soa" style="text-align: right">
+    <input type="text" placeholder="Nhập b" id="sob" style="text-align: right">
+    <input type="button" onclick="tinh()" value="Tính x">
+    <p id="ketqua">Kết quả: </p>
+</form>
+<script>
+    function tinh() {
+        let a = document.getElementById("soa").value
+        let b = document.getElementById("sob").value
+        let x = -b/a
+        document.getElementById("ketqua").innerHTML= ("Kết quả: x = "+ x)
+    }
+</script>
+</body>
+</html>

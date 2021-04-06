@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 12</title>
+</head>
+<body>
+<p>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</p>
+<form>
+<input type="text" placeholder="Nhập số tiền (triệu)" style="text-align: right" id="sotien">
+<input type="text" placeholder="Nhập số tháng gửi" style="text-align: right" id="sothang">
+<input type="text" placeholder="Nhập lãi suất" style="text-align: right" id="laisuat">
+<input type="button" onclick="tinh()" value="Tính tiền lãi">
+<br>
+<p id="ketqua">Kết quả : </p>
+<button type="reset">Reset</button>
+</form>
+<script>
+function tinh() {
+let a = parseFloat(document.getElementById("sotien").value);
+let b = parseFloat(document.getElementById("sothang").value);
+let c = parseFloat(document.getElementById("laisuat").value);
+let kq = parseFloat(a*(Math.pow(1+c/100,b)));
+document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+}
+</script>
+</body>
+</html>

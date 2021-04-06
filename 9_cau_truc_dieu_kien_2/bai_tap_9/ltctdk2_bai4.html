@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</title>
+</head>
+<body>
+<p>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</p>
+<form>
+    <input type="text" placeholder="cạnh a (m)" id="a" style="text-align: right">
+    <input type="text" placeholder="cạnh b (m)" id="b" style="text-align: right">
+    <input type="button" onclick="tinh()" value="tính diện tính">
+    <br>
+    <p id="ketqua">Kết quả: </p>
+    <script>
+        function tinh() {
+        let dai = document.getElementById("a").value
+            let rong = document.getElementById("b").value
+            let dt = dai*rong
+            document.getElementById("ketqua").innerHTML = ("Kết quả: " + dt + " mét vuông")
+        }
+    </script>
+</form>
+</body>
+</html>

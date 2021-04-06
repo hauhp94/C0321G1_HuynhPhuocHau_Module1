@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 11</title>
+</head>
+<body>
+<p>
+    Bậc 1: 4 triệu đồng/tháng 0%;<br>
+    Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;<br>
+    Bậc 3: Trên 6 - 9 triệu đồng: 10%;<br>
+    Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;<br>
+    Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;<br>
+    Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;<br>
+    Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;<br>
+    Bậc 8: Trên 84 triệu đồng: 35%.<br>
+</p>
+<input type="text" id="sotien" placeholder="0 triệu vnd">
+<input type="button" onclick="tinh()" value="Tính tiền thuế">
+<br>
+<p id="ketqua">Kết quả: </p>
+<script>
+function tinh() {
+    let a = parseFloat(document.getElementById("sotien").value);
+    if (a>84){
+        let kq = 2*5/100 +3*10/100 +5*15/100 + 10*20/100 + 20*25/100 + 40*30/100 + ((a-84)*35)/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>44){
+        let kq = 2*5/100 +3*10/100 +5*15/100 + 10*20/100 + 20*25/100 + (a-44)*30/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>24){
+        let kq = 2*5/100 +3*10/100 +5*15/100 + (a-14)*20/100 + (a-20)*25/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>14){
+        let kq = 2*5/100 +3*10/100 +5*15/100 + 10*20/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>9){
+        let kq = 2*5/100 +3*10/100 + (a-9)*15/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>6){
+        let kq = 2*5/100 +(a-6)*10/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else if (a>4){
+        let kq = (a-4)*5/100
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " triệu vnd")
+    }
+    else {
+        document.getElementById("ketqua").innerHTML = ("Kết quả: không thu thuế")
+    }
+
+}
+</script>
+</body>
+</html>

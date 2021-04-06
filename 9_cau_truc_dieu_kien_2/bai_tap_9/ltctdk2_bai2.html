@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau truc dieu kien 2 bai 2</title>
+</head>
+<body>
+<p>Bài tập chuyển từ mét sang feet</p>
+<form>
+    <input type="text" placeholder="m" id="met" style="text-align: right">
+    <input type="button" value="Đổi sang feet" onclick="tinh()">
+    <p id="ketqua">Kết quả:</p>
+</form>
+<script>
+    function tinh() {
+    let a = document.getElementById("met").value
+    let kq = a *3.2808
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " feet")
+    }
+</script>
+</body>
+</html>

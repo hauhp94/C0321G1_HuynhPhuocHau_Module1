@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+<p>Bài 7: Giải phương trình bậc 2. ax2+bx+c=0</p>
+<form>
+    <input type="text" placeholder="Nhập a" id="nhapa" style="text-align: right">
+    <input type="text" placeholder="Nhập b" id="nhapb" style="text-align: right">
+    <input type="text" placeholder="Nhập c" id="nhapc" style="text-align: right">
+    <input type="button" value="Tính x" onclick="tinh()">
+    <br>
+    <p id="ketqua">Kết quả: x =</p>
+</form>
+<script>
+    function tinh(){
+        let a = document.getElementById("nhapa").value;
+        let b = document.getElementById("nhapb").value;
+        let c = document.getElementById("nhapc").value;
+        let delta = (b*b) - (4*a*c);
+        if (a != 0) {
+            if (delta > 0) {
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+            document.getElementById("ketqua").innerHTML = ("Kết quả: x1 = " + x1 + "x2 = " + x2)
+            }
+            else if (delta == 0) {
+            let x = -b/(2*a)
+            document.getElementById("ketqua").innerHTML = ("Kết quả: phương trinh có nghiệm kép x1 = x2 = "+x)
+                }
+            else {
+            document.getElementById("ketqua").innerHTML = ("Kết quả: Phương trình vô nghiệm")
+            }
+
+
+        }else {
+        let x = -c/b
+        document.getElementById("ketqua").innerHTML = ("Kết quả: x = "+ x)
+    }
+    }
+</script>
+</body>
+</html>

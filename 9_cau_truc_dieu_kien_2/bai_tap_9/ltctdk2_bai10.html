@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<p>Bài 10: Viết chương trình tính giá điện.</p>
+<input type="text" id="sochudien" placeholder="số chữ điện">
+<input type="button" onclick="tinh()" value="Tính tiền">
+<br>
+<p id="ketqua">Tổng tiền: </p>
+<p>Biết rằng 100 kWh đầu giá 1000, từ kWh 101 – 150 giá 1200, từ kWh 151 – 200 giá 2000, từ 201 trở lên giá 2500.</p>
+<script>
+    function tinh() {
+    let a = parseFloat(document.getElementById("sochudien").value)
+        if (a>200){
+            let kq = 100*1000 + 50*1200 + 50*2000+ (a-200)*2500
+            document.getElementById("ketqua").innerHTML = ("kết quả: "+ kq +" vnd")
+        }
+        else if (a>150){
+            let kq = 100*1000 + 50*1200 + (a-150)*2000
+            document.getElementById("ketqua").innerHTML = ("kết quả: "+ kq+" vnd")
+        }
+        else if (a>100){
+            let kq = 100*1000 + (a-100)*1200
+            document.getElementById("ketqua").innerHTML = ("kết quả: "+ kq+" vnd")
+        }
+        else {
+            let kq = a*1000
+            document.getElementById("ketqua").innerHTML = ("kết quả: "+ kq+" vnd")
+        }
+    }
+</script>
+</body>
+</html>

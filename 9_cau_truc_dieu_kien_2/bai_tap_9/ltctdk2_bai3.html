@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh dien tich hinh vuong</title>
+</head>
+<body>
+<p>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</p>
+<form>
+    <input type="text" placeholder="cạnh a (m)" id="a" style="text-align: right">
+    <input type="button" onclick="tinh()" value="tính diện tích">
+    <br>
+    <p id="ketqua">Kết quả: </p>
+    <script>
+        function tinh() {
+            let canh = document.getElementById("a").value
+            let dt = canh*canh
+            document.getElementById("ketqua").innerHTML = ("Kết quả: " + dt + " mét vuông")
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau truc dieu kien 2 bai 1</title>
+</head>
+<body>
+<p>Bài 1: Chuyển từ độ C sang độ F.</p>
+<form>
+    <input type="text" id="doC" placeholder="Độ C">
+    <input type="button" onclick="tinh()" value="Đổi">
+    <p id="ketqua">Kết quả:</p>
+</form>
+<script>
+    function tinh() {
+        let c = document.getElementById("doC").value;
+        let kq = c * 9 / 5 + 32;
+        document.getElementById("ketqua").innerHTML = ("Kết quả: " + kq + " độ F");
+    }
+</script>
+</body>
+</html>

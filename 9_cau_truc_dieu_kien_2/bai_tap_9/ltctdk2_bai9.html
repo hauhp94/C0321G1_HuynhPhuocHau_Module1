@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh
+        của một tam giác là:</title>
+</head>
+<body>
+<p>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</p>
+<form>
+<input type="text" placeholder="Nhập a" id="soa" style="text-align: right">
+<input type="text" placeholder="Nhập b" id="sob" style="text-align: right">
+<input type="text" placeholder="Nhập c" id="soc" style="text-align: right">
+<input type="button" value="Kiểm Tra" onclick="kiemtra()">
+<p id="ketqua">Kết quả:</p>
+    <button type="reset">Reset</button>
+</form>
+<script>
+    function kiemtra() {
+        let a = parseFloat(document.getElementById("soa").value);
+        let b = parseFloat(document.getElementById("sob").value);
+        let c = parseFloat(document.getElementById("soc").value);
+        if (a > 0 && b > 0 && c > 0) {
+            if ( ((a+b)>c) && ((b+c)>a) && ((a+c)>b) ) {
+                document.getElementById("ketqua").innerHTML = ("Thỏa mãn là 3 cạnh của 1 tam giác");
+            } else {
+                document.getElementById("ketqua").innerHTML = ("Không thỏa mãn");
+            }
+    }else {
+        document.getElementById("ketqua").innerHTML = ("Không thỏa mãn");
+        }
+    }
+</script>
+</body>
+</html>

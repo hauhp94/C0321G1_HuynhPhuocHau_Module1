@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0</title>
+</head>
+<body>
+<p>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+    <br>Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+</p>
+<form>
+    <input type="text" id="sotuoi" placeholder="Nhập số tuổi" style="text-align: right">
+    <input type="button" value="Kiểm tra" onclick="tinh()">
+    <p id="ketqua">Kết quả:</p>
+</form>
+<script>
+    function tinh() {
+    let a = document.getElementById("sotuoi").value
+        if (a>120) {
+            document.getElementById("ketqua").innerHTML = ("Đây không phải số tuổi")
+        }
+        else if (a>0){
+            document.getElementById("ketqua").innerHTML = ("Đây là số tuổi")
+        }
+        else {
+            document.getElementById("ketqua").innerHTML = ("Đây không phải số tuổi")
+        }
+    }
+</script>
+</body>
+</html>
