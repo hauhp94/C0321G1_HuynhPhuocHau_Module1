@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dkct bai 5</title>
+</head>
+<body>
+<script>
+    let diemkt = parseFloat(prompt("nhap diem kiem tra "))
+    let diemgk = parseFloat(prompt("nhap diem giua ky"))
+    let diemck = parseFloat(prompt("nhap diem cuoi ky"))
+    let diemtb = parseFloat((diemkt + diemgk + diemck*2)/4);
+    if (diemtb >= 9) document.write("loai xuat sac");
+    else if (diemtb >=8) document.write("loai gioi");
+    else if (diemtb >=6.5) document.write("loai kha");
+    else if (diemtb >=5) document.write("loai trung binh");
+    else document.write("loai yeu");
+</script>
+</body>
+</html>

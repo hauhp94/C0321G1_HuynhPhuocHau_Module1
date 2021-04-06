@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh so tien cuoc dien thoai</title>
+</head>
+<body>
+<p>Phí thuê bao bắt buộc là 25 nghìn.<br>
+    600 đồng cho mỗi gọi của 50 phút đầu tiên.<br>
+    400 đồng cho mỗi phút gọi của 150 phút tiếp theo.<br>
+    200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</p>
+<script>
+    let a = parseInt(prompt("nhap vao so phut da su dung"))
+    let PHITHUEBAO = 25000
+    if (a>=200){
+        let phi = PHITHUEBAO + 50*600 + 150*400 + (a-200)*200
+        document.write("phí là "+phi+ " vnd")
+    }
+    else if (a>=50){
+        let phi = PHITHUEBAO + 50*600 + (a-50)*400
+        document.write("phí là " + phi+ " vnd")
+    }
+    else {
+        let phi = PHITHUEBAO + 50*a
+        document.write(("phí là "+ phi + " vnd"))
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh hoa hong</title>
+</head>
+<body>
+<p>5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.<br>
+    10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.<br>
+    20 % nếu tổng doanh số là lớn hơn 300 triệu.</p>
+<script>
+    let a = parseFloat(prompt("nhap vao doanh thu bao nhieu trieu vnd"));
+    if (a<=100) {
+        let b = 5*a/100;
+        document.write("tien hoa hong 5% là "+b+" trieu");
+    }
+    else if (a<=300){
+        let b = 10*a/100;
+        document.write("tien hoa hong 10% la "+b+" trieu");
+    }
+    else {
+        let b = 20*a/100;
+        document.write("tien hoa hong 20% la "+b+ " trieu");
+    }
+</script>
+</body>
+</html>
