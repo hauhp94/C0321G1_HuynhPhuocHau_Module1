@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+    <script>
+    let hientai = 0;
+    let tieptheo = 1;
+    let dem = 0;
+    let tong;
+    let ketqua;
+    while (dem<20){
+        tong = hientai + tieptheo;
+        if (hientai %5 ===0 && hientai !==0){
+            ketqua = hientai;
+            break;
+        }
+        document.write(hientai + "<br>");
+        hientai = tieptheo
+        tieptheo = tong
+        dem++;
+    }
+    document.write("số đầu tiên chia hết cho 5 là: " + ketqua);
+</script>
+</body>
+</html>

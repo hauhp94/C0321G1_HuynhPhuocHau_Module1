@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố đầu tiên</title>
+</head>
+<body>
+<h1>Hiển thị những số nguyên tố cần in</h1>
+<p id="in"> N = </p>
+<p id="ketqua"></p>
+<script>
+    let n = parseInt(prompt("Nhập số lượng số nguyên tố cần in"));
+    document.getElementById("in").innerHTML = n + " số nguyên tố đầu tiên"
+    var m = 0;
+    var a = 1;
+    do {
+        let dem = 0;
+        for (let i = 2; i < a; i++) {
+            if (a % i === 0) {
+                dem++
+            }
+        }
+        if (dem === 0) {
+            document.write(a + " ");
+            m++
+        }
+        a++
+    } while (m < n)
+</script>
+</body>
+</html>

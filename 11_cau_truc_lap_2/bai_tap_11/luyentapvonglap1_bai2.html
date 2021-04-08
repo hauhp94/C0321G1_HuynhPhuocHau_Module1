@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen tap vong lap 1 bai 2</title>
+</head>
+<body>
+<script>
+    let a;
+    do{
+        a = parseFloat(prompt("nhập vào nhiệt độ"))
+        console.log(a);
+        if (a<20){
+            alert("tăng nhiệt độ")
+        }
+        if (a>100){
+            alert("giảm nhiệt độ")
+        }
+    }
+    while (a<20 || a>100);
+    document.write("nhiệt độ cân bằng: " + a);
+</script>
+</body>
+</html>

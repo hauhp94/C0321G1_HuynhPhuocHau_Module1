@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 8</title>
+</head>
+<body>
+<p>Bài 8: Game đoán số</p>
+<button onclick="run()">Chơi</button>
+<script>
+    function run() {
+        alert("Nhập đoạn muốn đoán [a, b]");
+        let a = +prompt("Nhập a : ");
+        let b = +prompt("Nhập b : ");
+        if (a > b) {
+            a = b + ((b = a), 0);
+        }
+        let nuRandom = Math.floor(Math.random() * (b - a + 1)) + a;
+        let number;
+        let dem=1
+        do {
+            number = +prompt("Nhập dự đoán");
+            if (number > nuRandom) {
+                alert("Số bé hơn");
+            } else if (number < nuRandom) {
+                alert("Số lớn hơn");
+            } else {
+                alert("Chúc mừng bạn dự đoán đúng");
+                break;
+            }dem++
+            if (dem>3){
+                alert("Đã quá 3 lần đoán, chơi lại")
+                break;
+            }
+        } while (number !== nuRandom);
+    }
+</script>
+</body>
+</html>

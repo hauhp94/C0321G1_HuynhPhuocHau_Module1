@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</title>
+</head>
+<body>
+<p>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</p>
+<form>
+    <input type="text" placeholder="Nhập tiền gốc (triệu)" id="tiengoc">
+    <input type="text" placeholder="Nhập số tháng" id="thang">
+    <input type="text" placeholder="Nhập lãi suất" id="laisuat">
+    <br>
+    <input type="button" onclick="tinh()" value="tính">
+    <p id="ketqua">Kết quả: </p>
+    <button type="reset">Nhập lại</button>
+    <script>
+        function tinh() {
+            let tg = parseFloat(document.getElementById("tiengoc").value);
+            let n = parseFloat(document.getElementById("thang").value);
+            let l = parseFloat(document.getElementById("laisuat").value);
+            let kq;
+            console.log(tg)
+            console.log(n)
+            console.log(l)
+            kq = parseFloat(tg*(Math.pow(1+l/100,n)));
+            document.getElementById("ketqua").innerHTML=("Kết quả: "+ kq+ " triệu VND");
+        }
+    </script>
+</form>
+<script>
+
+</script>
+</body>
+</html>
