@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<p>Bài 4: Viết một chương trình để đếm số từ trong một chuỗi</p>
+</body>
+<script>
+    let arrKiTu = []
+    let n = parseInt(prompt("Nhập số lượng kí tự"))
+    for (i = 0; i < n; i++) {
+        let a = prompt("Nhập kí tự thứ " + i)
+        arrKiTu[i] = a
+    }
+    alert(arrKiTu);
+    let count = 0;
+    for (let j = 0; j < arrKiTu.length; j++) {
+        if(isNaN(arrKiTu[j])){
+            count++;
+        }
+    }
+
+    document.write("so luong ki tu: "+count)
+</script>
+</html>

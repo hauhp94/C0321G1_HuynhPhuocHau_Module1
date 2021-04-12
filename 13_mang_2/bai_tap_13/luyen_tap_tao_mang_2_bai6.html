@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<p>Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này
+    bởi ký tự ( _ )
+</p>
+</body>
+<script>
+    arr = []
+    let n = parseInt(prompt("Nhập vào số lượng phần tử của mảng"))
+    for (i = 0; i < n; i++) {
+        let a = prompt("Nhập vào các ký tự thứ " + i)
+        arr[i] = a
+    }
+    document.write("Mảng vừa tạo là " + arr+"<br>")
+    let key = "-"
+    for (j=0;j<n;j++){
+    let ketQua = arr.indexOf(key)
+    arr[ketQua]="_";
+    }
+    document.write("Mảng sau khi thay đổi: "+ arr)
+</script>
+</html>

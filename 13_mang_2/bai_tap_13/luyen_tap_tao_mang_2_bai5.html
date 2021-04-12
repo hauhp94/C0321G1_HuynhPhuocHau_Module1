@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+
+    </title>
+</head>
+<body>
+<p>Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</p>
+</body>
+<script>
+    let a = prompt("nhạp số lượng kí tự mảng(1 và 2)")
+    arr1=[]
+    for (i=0;i<a;i++){
+        let a1 = prompt("Nhập vào mảng 1 phần tử thứ "+i)
+        arr1[i]= a1
+    }
+    document.write("Mảng 1 là "+ arr1+ "<br>")
+    arr2=[]
+    for (j=0;j<a;j++){
+        let b1 = prompt("Nhập vào mảng 2 phần tử thứ "+j)
+        arr2[j]= b1
+    }
+    document.write("Mảng 2 là "+ arr2+ "<br>")
+    let dem =0
+    for (k=0;k<a;k++){
+        if (arr1[k]===arr2[k]){
+            dem++
+        }
+    }
+    if (dem==a){
+        document.write("2 mảng giống nhau")
+    }else {
+        document.write("2 mảng khác nhau")
+    }
+</script>
+</html>
