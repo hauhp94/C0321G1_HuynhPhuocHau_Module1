@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+
+    </title>
+</head>
+<body>
+<p>Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+</p>
+<script>
+    let arr = []
+    for (i=0;i<10;i++){
+        let a = parseInt(prompt("Nhập vào phần tử thứ "+i))
+        arr[i] = a
+    }
+    document.write("Mảng vừa tạo là "+ arr)
+    let v = parseInt(prompt("Nhập vào số V để kiểm tra"))
+    let ketqua = arr.indexOf(v);
+    console.log(ketqua)
+    if (ketqua == -1) {document.write("<br>"+ v +" không có trong mảng vừa tạo")}
+    else {document.write("<br> V= "+v+ " có trong mảng vừa tạo")}
+
+</script>
+</body>
+</html>

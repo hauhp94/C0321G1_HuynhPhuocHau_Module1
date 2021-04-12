@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập từ điển</title>
+</head>
+<body>
+<p> Tra từ điển tiếng anh các số từ 1-5 </p>
+<input type="text" id="key" placeholder="Nhập từ tiếng Anh"> <br><br>
+<input type="button" value="Search" onclick="Search()">
+<p id="hienchu">Kết quả: </p>
+</body>
+<script>
+    let vietNamese = ["một", "hai", "ba", "bốn", "năm"];
+    let english = ["one", "two", "three", "four", "five"];
+    function Search() {
+    let key = document.getElementById("key").value;
+    let ketqua = english.indexOf(key);
+    if (ketqua === -1){
+        alert("không tìm thấy");
+    }else {document.getElementById("hienchu").innerHTML = ("Kết quả: "+ vietNamese[ketqua])
+    }
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<p>Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi</p>
+</body>
+<script>
+    let dem = 0
+    let str = prompt("Nhập vào 1 chuỗi");
+    let ketqua = []
+    ketqua = str.split(" ")
+    for (i = 0; i < str.length; i++) {
+        if (parseInt(ketqua[i]) < 0) {
+            document.write("Số nguyên âm trong chuỗi là "+ ketqua[i]+"<br>")
+            dem++
+        }
+    }
+    console.log(i)
+    document.write("Mảng tạo được là " + ketqua + "<br>")
+    document.write("số lượng số nguyên âm là " + dem +"<br>")
+</script>
+</html>
