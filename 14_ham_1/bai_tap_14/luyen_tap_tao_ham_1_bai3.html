@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 3</title>
+</head>
+<body>
+<p>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại
+    thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai
+    tham số.</p>
+
+</body>
+<script>
+    let a = prompt("Nhập a")
+    let b = prompt("Nhập b")
+
+    function sosanh(a, b) {
+        if (a > b) {
+            let c = ''
+            return c = "a lớn hơn b"
+        } else if (a < b) {
+            let c = parseFloat(a) + parseFloat(b)
+            return c = parseFloat(a) + parseFloat(b)
+        } else {
+            return c = "a và b bằng nhau"
+        }
+    }
+
+    alert(sosanh(a, b))
+</script>
+</html>

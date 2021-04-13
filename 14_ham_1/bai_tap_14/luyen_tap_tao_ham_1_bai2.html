@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập tạo hàm bài 2</title>
+</head>
+<body>
+<p>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. Gọi hàm từ trong phần của trang web và hiển thị kết quả lên màn hình.</p>
+<input type="text" id="sonhap" placeholder="Nhập vào 1 số">
+<button onclick="add1()">Thêm 1</button>
+<p id="ketqua">Kết quả</p>
+</body>
+<script>
+    function add1() {
+        let a = document.getElementById("sonhap").value;
+        a++
+        document.getElementById("ketqua").innerHTML= "Sau khi cộng 1= "+ a
+    }
+</script>
+</html>

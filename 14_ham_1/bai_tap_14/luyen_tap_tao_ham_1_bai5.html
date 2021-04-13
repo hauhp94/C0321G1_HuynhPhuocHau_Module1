@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5</title>
+</head>
+<body>
+<button type="button" onclick="nhap()">Nhập tên sao</button>
+<button type="button" onclick="kiemTra()">Kiểm tra</button>
+<p>Ấn nút nhập tên sao, sau đó ấn nút kiểm tra</p>
+</body>
+<script>
+    let str=''
+    function nhap(){
+        str = prompt("Nhập tên sao")
+    }
+    let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrChomSao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    console.log(arrStar)
+    console.log(arrChomSao)
+    console.log(str)
+    function kiemTra() {
+        let c = arrStar.indexOf(str);
+        console.log(c)
+        if (c === -1) {
+            alert("không tìm thấy")
+        } else {
+            alert("Tìm thấy tại vị trí " + c)
+            alert("Tên chòm sao là " + arrChomSao[c])
+        }
+    }
+</script>
+</html>
