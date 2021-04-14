@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 8</title>
+</head>
+<body>
+<p>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</p>
+</body>
+<script>
+    let n = parseInt(prompt("Nhập vào số lượng kí tự của mảng"));
+        let arr = []
+        for (i=0;i<n;i++){
+            let a = parseInt(prompt("Nhập vào số thứ "+i))
+            arr[i] = a
+    }
+        alert("Mảng trước khi đảo ngược là "+ arr)
+        alert("Mảng sau khi đảo ngược là "+ daoNguocMang(arr))
+    function daoNguocMang(arr) {
+        return arr.reverse();
+    }
+</script>
+</html>

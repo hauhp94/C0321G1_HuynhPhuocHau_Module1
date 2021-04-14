@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 5</title>
+</head>
+<body>
+<p>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</p>
+</body>
+<script>
+    let a = parseInt(prompt("Nhập a"))
+    let b = parseInt(prompt("Nhập b"))
+    let c = parseInt(prompt("Nhập c"))
+    alert("giá trị nhỏ nhất là "+ timMin(a,b,c))
+    function timMin(a,b,c) {
+        let min = a
+        if (b<min){
+            min = b
+        }
+        if (c<min){
+            min = c
+        }
+        return min
+    }
+</script>
+</html>

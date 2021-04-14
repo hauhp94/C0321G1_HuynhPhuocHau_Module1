@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<p>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả
+    về true, ngược lại trả về false.</p>
+</body>
+<script>
+    let a = parseFloat(prompt("Nhập vào 1 số"))
+    if (checkSoDuong(a)) {
+        alert(a + " là số nguyên dương")
+    } else {
+        alert(a + " không phải số nguyên dương")
+    }
+    function checkSoDuong(a) {
+        if (Number.isInteger(a) && a > 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+</script>
+</html>

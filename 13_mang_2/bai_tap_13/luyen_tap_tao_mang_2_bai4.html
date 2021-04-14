@@ -17,11 +17,11 @@
     alert(arrKiTu);
     let count = 0;
     for (let j = 0; j < arrKiTu.length; j++) {
-        if(isNaN(arrKiTu[j])){
+        if(!(isNaN(arrKiTu[j]))){
             count++;
         }
     }
 
-    document.write("so luong ki tu: "+count)
+    document.write("Số lượng số trong chuỗi là:  "+count)
 </script>
 </html>

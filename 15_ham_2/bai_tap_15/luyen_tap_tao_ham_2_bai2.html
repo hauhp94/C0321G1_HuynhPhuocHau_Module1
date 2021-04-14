@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<p>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</p>
+</body>
+<script>
+    let r= parseFloat(prompt("Nhập vào bán kính hình tròn (mét)"))
+    alert("Chu vi hình tròn là "+ tinhCVHinhTron(r)+ " mét");
+    alert("Diện tích hình tròn là "+ tinhDTHinhTron(r)+" mét vuông" )
+    function tinhDTHinhTron(r) {
+        return Math.pow(r,2)*Math.PI
+    }
+    function tinhCVHinhTron(r) {
+        return r*2*Math.PI
+    }
+</script>
+</html>

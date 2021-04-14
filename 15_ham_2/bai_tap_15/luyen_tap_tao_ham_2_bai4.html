@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4</title>
+</head>
+<body>
+<p>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</p>
+</body>
+<script>
+    let a = prompt("Nhập vào 1 kí tự để kiểm tra có phải số hay không")
+    alert(kiemTra(a))
+    function kiemTra(a) {
+        if (!isNaN(a)){
+            return true
+        }else return false
+    }
+</script>
+</html>
