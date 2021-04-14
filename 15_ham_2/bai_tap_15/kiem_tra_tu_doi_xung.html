@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tu doi xung</title>
+</head>
+<body>
+<p>[*Bài tập] Kiểm tra từ đối xứng</p>
+</body>
+<script>
+    let chuoi = prompt("Nhập và 1 chuỗi kiểm tra đối xứng")
+    alert(isPalindrome(chuoi))
+    function isPalindrome(str) {
+        let first = 0;
+        let last = str.length - 1;
+        if (first >= last) {
+            return true;
+        } else if (str[first] !== str[last]) {
+            return false;
+        } else {
+            str = str.slice(1, str.length - 1);
+            return isPalindrome(str);
+        }
+    }
+</script>
+</html>
