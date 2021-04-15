@@ -13,31 +13,33 @@
         constructor(nhietdo) {
             this.nhietdo = nhietdo
         }
-        getNhietdo(){
-            document.write(this.nhietdo+ " độ C")
+
+        getNhietdo() {
+            document.write(this.nhietdo + " độ C")
             return this.nhietdo
         }
-            getCsangF()
-            {
-                let f = this.nhietdo * 9 / 5 + 32
-                document.write(f+ " độ F")
-                return f
-            }
-            getCsangK()
-            {
-                let k = this.nhietdo + 273.15
-                document.write(k+" độ K")
-                return k
-            }
+
+        getCsangF() {
+            let f = this.nhietdo * 9 / 5 + 32
+            document.write(f + " độ F")
+            return f
+        }
+
+        getCsangK() {
+            let k = this.nhietdo + 273.15
+            document.write(k + " độ K")
+            return k
+        }
 
     }
-    let a =0
+
+    let a = 0
     do {
         a = parseFloat(prompt("Nhập nhiệt độ (độ C)"))
-        if(a<-273){
+        if (a < -273) {
             alert("Nhập lại số <-273")
         }
-    }while (a<-273)
+    } while (a < -273)
     let Temperature1 = new Temperature(a)
     Temperature1.getNhietdo()
     document.write("<br>")
