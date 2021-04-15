@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<p>
+    Bài 1: Viết một chương trình để nhập lương nhân viên,<br>
+    tính thuế thu nhập và lương ròng (số tiền lương thực sự mà nhân viên đó nhận được).<br>
+    Với các thông số giả sử như sau (không theo luật lương, chỉ là con số giả sử để dễ tính toán):<br>
+    20% thuế thu nhập nếu lương là 15 triệu.<br>
+    10% thuế thu nhập nếu lương từ 7 đến 15 triệu.<br>
+    5% thuế thu nhập nếu lương dưới 7 triệu<br>
+</p>
+<label for="luonggoc">Nhập tiền lương chưa thuế: </label>
+<br>
+<input oninput="tinh()" type="text" id="luonggoc" placeholder="Nhập lương chưa thuế (triệu VND)"style="width: 300px">
+<!--<button onclick="tinh()">Tính</button>-->
+<br>
+<p id="goc"></p>
+<p id="thue"></p>
+<p id="rong"></p>
+</body>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("luonggoc").value);
+        let thue;
+        if (a > 15) {
+            thue = a * 20 / 100
+        } else if (a > 7) {
+            thue = a * 10 / 100
+        } else {
+            thue = a * 5 / 100
+        }
+        let luongrong = a - thue
+        document.getElementById("goc").innerHTML = "Lương chưa thuế là " + a + " triệu VND"
+        document.getElementById("thue").innerHTML = "Tiền thuế là " + thue + " triệu VND"
+        document.getElementById("rong").innerHTML = "Lương ròng là " + luongrong + " triệu VND"
+    }
+
+</script>
+</html>
