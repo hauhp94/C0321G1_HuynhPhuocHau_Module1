@@ -1,11 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài tập tic tac toe</title>
+    <title>Title</title>
 </head>
 <body>
-<p>Bài tập tic tac toe</p>
+<p id="ketQua"></p>
+<script>
+    // TẠO MẢNG 2 CHIỀU ĐỂ LƯU GIÁ TRỊ
+    let arr= new Array(12);
+    for (let i=0;i<12;i++){
+        arr[i]= new Array(12)
+        for (let j=0;j<12;j++){
+            arr[i][j]=''
+        }
+    }
+    let choosePlayer1=true;
+    display();
+    // HÀM HIỆN THỊ THÔNG TIN BẢNG
+    function display(){
+        let tableString='<table border="1">';
+        for (let i=0; i<12;i++){
+            tableString+='<tr>';
+            for (let j =0; j<12;j++){
+                tableString+=' <td style="width: 20px;height: 20px" onclick="play('+i+','+j+')">'+arr[i][j]+'</td>'
+            }
+            tableString+='</tr>';
+        }
+        tableString +='</table>';
+        document.getElementById("ketQua").innerHTML= tableString;
+    }
+    // HÀM ĐÁNH CARO
+    function play(i,j) {
+        if(choosePlayer1&&!checkPlayed(i,j)){
+            arr[i][j]="X";
+            choosePlayer1=false;
+            if(checkWin()){
+                alert(" người chơi số 1 thắng")
+            }
+        }else if(!choosePlayer1&&!checkPlayed(i,j)){
+            arr[i][j]="O";
+            choosePlayer1=true;
+            if(checkWin()){
+                alert(" người chơi số 2 thắng")
+            }
+        }
+        display()
+    }
+    // HÀM KIỂM TRA Ô ĐÃ CÓ NGƯỜI CHƠI CHƯA
+    function checkPlayed(i,j) {
+        if(arr[i][j]=="X"||arr[i][j]=="O"){
+            alert("Chơi ăn gian!!!")
+            return true;
+        }
+        return false;
 
+    }
+    // HÀM KIỂM TRA CHIẾN THẮNG
+    function checkWin() {
+        for (let i=0; i<12;i++){
+            for (let j =0; j<12;j++){
+                if(arr[i][j]=="X"){
+                    if(arr[i][j+1]=="X"&&arr[i][j+2]=="X"){
+                        return true;
+                    }
+                    if(arr[i+1][j]=="X"&&arr[i+2][j]=="X"){
+                        return true;
+                    }
+                    if(arr[i+1][j+1]=="X"&&arr[i+2][j+2]=="X"){
+                        return true;
+                    }
+                    if(arr[i-1][j+1]=="X"&&arr[i-2][j+2]=="X"){
+                        return true;
+                    }
+                }else if(arr[i][j]=="O"){
+                    if(arr[i][j+1]=="O"&&arr[i][j+2]=="O"){
+                        return true;
+                    }
+                    if(arr[i+1][j]=="O"&&arr[i+2][j]=="O"){
+                        return true;
+                    }
+                    if(arr[i+1][j+1]=="O"&&arr[i+2][j+2]=="O"){
+                        return true;
+                    }
+                    if(arr[i-1][j+1]=="O"&&arr[i-2][j+2]=="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+</script>
 </body>
 </html>

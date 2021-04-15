@@ -16,14 +16,15 @@
 <script>
     function footToMeter(){
         let a = document.getElementById("nhapfoot").value
-        let meter = 0.305 *a;
+        const  D = 0.305
+        let meter = D *a;
         document.getElementById("footSangMet").innerHTML= a+" foot= "+meter+ " met";
     }
     function meterToFoot(){
         let b=document.getElementById("nhapmet").value
-        let foot = 3.279*b;
+        const C = 3.279
+        let foot = C*b;
         document.getElementById("metSangFoot").innerHTML= b+" met= "+foot + " foot";
     }
-
 </script>
 </html>
