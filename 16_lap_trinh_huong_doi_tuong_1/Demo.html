@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // tạo đối tượng trực tiếp
+
+    let student1 = {name:"Nhung",
+                    age:19,
+                    study(subject){
+                      console.log("Đang học môn: "+ subject)
+                    }
+    };
+
+    // console.log("Tên của sinh viên :"+student1.name);
+    // console.log("Tuổi của sinh viên :"+student1.age);
+    // student1.study("Toán");
+
+    // tạo class Student bằng funcion
+
+    function Student(ten, tuoi) {
+          this.name=ten;
+          this.age = tuoi;
+          this.study = function (subject) {
+              console.log("Đang học môn: "+ subject)
+          }
+    }
+
+    // let student2 = new Student("Vương",18);
+    // let student3 = new Student("Khuê", 20);
+    // console.log("Tên của sv2: "+ student2.name);
+    // console.log("Tuổi của sv2: "+ student2.age);
+    // student2.study("Hóa")
+
+    class SinhVien{
+        constructor(ten, tuoi) {
+            this._name=ten;
+            this._age =tuoi;
+        }
+        setName(ten){
+            this._name=ten;
+        }
+        getName(){
+            return this._name;
+        }
+        setAge(tuoi){
+            this._age=tuoi;
+        }
+        getAge(){
+            return this._age;
+        }
+        study(subject){
+            console.log("Đang học môn: "+ subject)
+        }
+    }
+   let sinhVien4= new SinhVien("Vinh",16);
+    console.log("Tên của sv2: "+ sinhVien4.getName());
+    console.log("Tuổi của sv2: "+ sinhVien4.getAge());
+    sinhVien4.study("Hóa");
+    // thay đổi thuộc tính
+    sinhVien4.setName("Vinh2");
+    sinhVien4.setAge(24);
+    console.log("Tên của sv2: "+ sinhVien4.getName());
+    console.log("Tuổi của sv2: "+ sinhVien4.getAge());
+</script>
+</body>
+</html>

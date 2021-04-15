@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinh chu nhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="300" style="border: 1px solid"></canvas>
+</body>
+<script>
+    class Rectangle{
+        constructor(dai,rong) {
+            this.dai = dai
+            this.rong = rong
+            this.tinhS = function () {
+                    let s = dai*rong
+                    document.write("diện tích là: "+ s+"<br>")
+            }
+            this.tinhCV =function () {
+                let cv = (dai+rong)*2
+                document.write("<br>"+"chu vi là: "+ cv+"<br>")
+            }
+            this.veCanvas = function () {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(20,20,dai,rong);
+                ctx.clearRect(21,21,dai-2,rong-2);
+            }
+
+        }
+        setDai(dai){
+            this.dai = dai;
+        }
+        getDai(){
+            return this.dai;
+        }
+        setRong(rong){
+            this.rong = rong;
+        }
+        getRong(){
+            return this.rong;
+        }
+    }
+    let a = parseFloat(prompt("Nhập chiều dài"))
+    let b = parseFloat(prompt("Nhập chiều rộng"))
+    let Rectangle1 = new Rectangle(a,b)
+    document.write("<br>"+"chiều dài là " +Rectangle1.getDai()+ "<br>")
+    document.write("chiều rộng là " +Rectangle1.getRong())
+    Rectangle1.tinhCV()
+    Rectangle1.tinhS()
+    Rectangle1.veCanvas()
+
+
+
+
+</script>
+</html>
