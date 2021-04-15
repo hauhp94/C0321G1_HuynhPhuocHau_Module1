@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature
+    </title>
+</head>
+<body>
+<p>[Bài tập] Xây dựng lớp mô tả Temperature</p>
+</body>
+<script>
+    class Temperature {
+        constructor(nhietdo) {
+            this.nhietdo = nhietdo
+        }
+        getNhietdo(){
+            document.write(this.nhietdo+ " độ C")
+            return this.nhietdo
+        }
+            getCsangF()
+            {
+                let f = this.nhietdo * 9 / 5 + 32
+                document.write(f+ " độ F")
+                return f
+            }
+            getCsangK()
+            {
+                let k = this.nhietdo + 273.15
+                document.write(k+" độ K")
+                return k
+            }
+
+    }
+    let a = parseFloat(prompt("Nhập nhiệt độ (độ C)"))
+    let Temperature1 = new Temperature(a)
+    Temperature1.getNhietdo()
+    document.write("<br>")
+    Temperature1.getCsangF()
+    document.write("<br>")
+    Temperature1.getCsangK()
+
+</script>
+</html>
