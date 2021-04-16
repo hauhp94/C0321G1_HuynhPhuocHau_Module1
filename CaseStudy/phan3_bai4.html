@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<p>Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.<br>
+    Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.</p>
+</body>
+<script>
+    let a = ["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín"]
+    let chuoi = prompt("Nhập vào chuỗi số")
+    let mangChuoi = chuoi.split("")
+    console.log(mangChuoi)
+    let newArr = []
+    for (i=0;i<mangChuoi.length;i++){
+        newArr.push(a[mangChuoi[i]])
+    }
+    newArr1=newArr.join(" ");
+    document.write("Chuỗi số vừa nhập là: " +chuoi+"<br>");
+    document.write("Sau khi đổi số thành chữ: "+ newArr1);
+</script>
+</html>
