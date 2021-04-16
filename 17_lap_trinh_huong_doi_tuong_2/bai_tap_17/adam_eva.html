@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>adam và eva</title>
+</head>
+<body>
+<table border="1" width="80%" align="center">
+    <tr>
+        <td>Name</td>
+        <td align="center">Apple</td>
+        <td align="center">Adam</td>
+        <td align="center">Eva</td>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td align="center" id="apple"></td>
+        <td align="center" id="adam"></td>
+        <td align="center" id="eva"></td>
+    </tr>
+    <tr>
+        <td>Say</td>
+        <td align="center" ></td>
+        <td align="center" id="adamsay"></td>
+        <td align="center" id="evasay"></td>
+    </tr>
+
+
+</table>
+<p id="123"></p>
+</body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.Weight = weight;
+        }
+
+        decrease() {
+            if (this.Weight > 0) {
+                this.Weight--;
+            }
+        }
+
+        isEmpty() {
+            this.isEmpty
+            return this.isEmpty = true
+        }
+
+        getWeight() {111
+            return this.Weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.Name = name;
+            this.Gender = gender;
+            this.Weight = weight;
+        }
+
+        isMale() {
+            return this.Gender === true
+        }
+
+        setGender(gender) {
+            this.Gender === true;
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty()
+        }
+        eat(Apple){
+            if(apple.getWeight()>0){
+                apple.decrease();
+                this.Weight++
+            }
+        }
+        say(message){
+            return message;
+        }
+        getName(){
+            return this.Name;
+        }
+        setName(name){
+            this.Name =name;
+        }
+        getWeight(){
+            return this.Weight;
+        }
+        setWeight(weight){
+            this.Weight = weight;
+        }
+    }
+    let apple = new Apple(20);
+    let adam = new Human("Adam", true, 60);
+    let eva = new Human("Eva", false, 50);
+    adam.eat(Apple);
+    adam.eat(Apple);
+    eva.eat(Apple);
+    document.getElementById("apple").innerHTML = apple.getWeight();
+    document.getElementById("adam").innerHTML = adam.getWeight();
+    document.getElementById("eva").innerHTML = eva.getWeight();
+    document.getElementById("adamsay").innerHTML = adam.say("helo eva");
+    document.getElementById("evasay").innerHTML = eva.say("helo adam !!!");
+
+
+</script>
+</html>
