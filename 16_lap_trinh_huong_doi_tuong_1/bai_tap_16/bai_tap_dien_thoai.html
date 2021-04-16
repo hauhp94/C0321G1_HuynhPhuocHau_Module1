@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobi phone</title>
+</head>
+<body>
+<script>
+    class MobiPhone {
+        constructor(_battery, _draft, _inbox, _outbox, _status) {
+            this.battery = _battery;
+            this.draft = _draft
+            this.inbox = _inbox;
+            this.outbox = _outbox;
+            this.status = _status;
+        }
+
+        getCheckStatus() {
+            if (this.status) {
+                document.write("The mobile is ON");
+            } else {
+                document.write("The mobile is OFF");
+            }
+            this.battery--;
+        }
+
+        getSetStatus(_status) {
+            this.status = _status;
+            this.battery--;
+        }
+
+        getStatus() {
+            this.battery--;
+            return this.status;
+        }
+
+        getSwitchStatus() {
+            this.battery--;
+            this.status = !this.status;
+        }
+
+        getSetBattery(_battery) {
+            this.battery = _battery;
+        }
+
+        setMessageDraft = function (_messageDraft) {
+            if (this.status && this.battery > 0) {
+                this.draft.push(_messageDraft);
+                this.battery--;
+            } else {
+                document.write("The mobile is OFF or battery low")
+            }
+        }
+
+        sendMessage = function (_toMobiPhone, _message) {
+            if (this.status && this.battery > 0) {
+                _toMobiPhone.inbox.push(_message);
+                this.outbox.push(_message);
+                // this.draft.pop();
+                this.battery--;
+            } else {
+                document.write("The mobile is OFF or battery low");
+            }
+        }
+        showInbox = function () {
+            if (this.status && this.battery > 0) {
+                document.write(this.inbox.join(","));
+                this.battery--;
+            } else {
+                document.write("The mobile is OFF or battery low");
+            }
+        }
+
+        showOutbox = function () {
+            if (this.status && this.battery > 0) {
+                document.write(this.outbox.join(","));
+                this.battery--;
+            } else {
+                document.write("The mobile is OFF or..");
+            }
+        }
+    }
+
+    let nokia = new MobiPhone(50, [], [], [], true);
+    let iphone = new MobiPhone(70, [], [], [], true);
+    nokia.setMessageDraft("ahihi");
+    nokia.sendMessage(iphone, nokia.draft.pop());
+    iphone.showInbox();
+    document.write("<br/>")
+    nokia.showOutbox();
+</script>
+</body>
+</html>
