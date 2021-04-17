@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<p>[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</p>
+<table border="1px">
+    <tr>
+        <td>Công tắc</td>
+        <td>Bóng đèn</td>
+    </tr>
+
+    <tr>
+        <td>
+<!--            <button onclick="SwitchButton1.switchOn()">Bật</button>-->
+<!--            <button onclick="SwitchButton1.switchOff()">Tắt</button>-->
+        </td>
+        <td id="idBongDen"></td>
+    </tr>
+
+</table>
+</body>
+<script>
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status
+            this.lamp = lamp
+        }
+
+        connectToLamp(ElectricLamp) {
+            this.connectToLamp()
+        }
+
+        switchOff() {
+            this.switchOff
+            ElectricLamp1.status = "Không sáng"
+            return this.status = "Tắt"
+
+        }
+
+        switchOn() {
+            this.switchOn
+            ElectricLamp1.status = "Sáng"
+            return this.status = "Bật"
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status
+        }
+
+        turnOff() {
+            return this.status = "Không sáng"
+
+        }
+
+        turnOn() {
+            return this.status = "Sáng"
+        }
+    }
+
+    let ElectricLamp1 = new ElectricLamp()
+    let SwitchButton1 = new SwitchButton()
+    SwitchButton1.switchOff()
+    SwitchButton1.switchOn()
+    SwitchButton1.switchOff()
+    SwitchButton1.switchOn()
+    SwitchButton1.switchOff()
+    SwitchButton1.switchOn()
+    SwitchButton1.switchOff()
+    SwitchButton1.switchOn()
+    SwitchButton1.switchOff()
+    SwitchButton1.switchOn()
+
+    document.getElementById("idBongDen").innerHTML = ElectricLamp1.status
+</script>
+</html>
