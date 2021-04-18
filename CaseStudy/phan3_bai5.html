@@ -5,6 +5,99 @@
     <title>bai 5</title>
 </head>
 <body>
-
+<p>Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:</p>
+<!--<table border="1px" style="width: 700px; height: 400px">-->
+<!--    <tr>-->
+<!--        <th>Thức uống</th>-->
+<!--        <th>Số lượng</th>-->
+<!--        <th>Đơn giá</th>-->
+<!--        <th>Tổng tiền</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Cafe</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--        <td rowspan="6"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Cam vắt</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Nước ép cà rốt</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Nước ép cà chua</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Nước lọc</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Nước dừa</td>-->
+<!--        <td><input type="number"></td>-->
+<!--        <td><p></p></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<div id="tableProduct"></div>
+<br>
+<button onclick="tinh()">Tính tiền</button>
 </body>
+<script>
+    let thucUong = [
+        "Cafe",
+        "Cam vắt",
+        "Nước ép cà rốt",
+        "Nước ép cà chua",
+        "Nước lọc",
+        "Nước dừa",
+    ];
+    let gia = [15000, 20000, 30000, 40000, 10000, 25000]
+    let soluong = []
+    let tong = []
+    let temp = []
+    let sl = []
+
+    function show() {
+        let tableProduct = "<table border='1' style='width: 600px; height: 400px'>";
+        tableProduct += '<tr>' +
+            '<th><p>Số thứ tự</p></th>' +
+            '<th><p>Tên thức uống</p></th>' +
+            '<th><p>Số lượng</p></th>' +
+            '<th><p>Đơn giá</p></th>' +
+            '<th><p>Tổng tiền </p></th>' +
+            '</tr>'
+        for (let i = 0; i < thucUong.length; i++) {
+            tableProduct += `
+          <tr>
+             <td>${i + 1}</td>
+            <td>${thucUong[i]}</td>
+            <td><input type="number" placeholder="Nhập số lượng" oninput="nhap(${i})"></td>
+            <td><p id="gia">${gia[i]}</p></td>
+            <td><p id="tong">${tong[i]}</p></td>
+          </tr>
+          `;
+            // soluong.push(document.getElementById(i).value)
+        }
+        tableProduct += "<tr><th colspan='5'><p>Tổng đơn hàng</p></th></tr>";
+        tableProduct += "</table>";
+        document.getElementById("tableProduct").innerHTML = tableProduct;
+        console.log("Mảng giá " + gia)
+        console.log("Mảng số lượng" + soluong)
+        console.log(tong)
+    }
+
+    show();
+    function nhap(i) {
+
+        soluong.push()
+    }
+
+</script>
 </html>

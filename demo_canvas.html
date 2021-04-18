@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo canvas</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800px" height="400px" style="border: 1px solid"></canvas>
+</body>
+<script>
+    let a = document.getElementById("myCanvas")
+    let ctx = a.getContext("2d")
+    ctx.beginPath()
+    ctx.arc(250,250,100,0,2*Math.PI)
+    ctx.fill()
+</script>
+</html>
