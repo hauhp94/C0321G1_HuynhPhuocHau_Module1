@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<p>Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách<br>
+    liền nhau và bắt đầu mỗi từ phải in hoa.<br>
+    Ví dụ tRuong TaN HAI => Truong Tan Hai.<br>
+    Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, <br>
+    in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.<br>
+</p>
+</body>
+<script>
+    let a = prompt("Nhập vào chuỗi tên") //TRUONG TAN   HAI
+    let b = a.toLowerCase()
+    alert(b)
+    let c =  b.split(" "); //["truong","","tan","","","","hai"]
+    alert(c)
+    let kq = "";
+    for (let i=0;i<c.length;i++){
+        if(c[i] == ""){
+            continue;
+        } else {
+            for(let j=0; j< c[i].length; j++){
+                if(j==0){
+                    kq += c[i].charAt(j).toUpperCase(); //T
+                } else {
+                    kq += c[i].charAt(j); //Tr
+                }
+            }
+        }
+        kq += " ";
+    }
+    alert(kq);
+
+</script>
+</html>

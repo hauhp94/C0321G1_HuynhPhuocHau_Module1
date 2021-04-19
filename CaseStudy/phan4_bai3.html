@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 3</title>
+</head>
+<body>
+<p>Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.<br>
+    Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.<br>
+    ⇨ 2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.<br>
+</p>
+</body>
+<script>
+    let dem=0
+    let s1 = "aabcc"
+    let s2 = "adcaa"
+    let str = "";
+    let str1 = "";
+    for (let i = 0; i < s1.length; i++) {
+        if (s2.indexOf(s1[i]) !== -1 && str.indexOf(s1[i]) === -1) {
+            dem++;
+            str1=str.concat(s1[i]);
+        }
+    }
+
+    alert(s1)
+    alert(s2)
+    alert(str1)
+    alert(dem)
+</script>
+</html>
