@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 3</title>
+</head>
+<body>
+<p>Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều</p>
+</body>
+<script>
+    // let a = parseInt(prompt("Nhập số lượng dòng "))
+    // let b = parseInt(prompt("Nhập số lượng cột"))
+    // let arr=[]
+    // for(let i=0; i<a;i++){
+    //     arr[i]= b
+    //     for (let j=0;j<b;j++){
+    //         arr[i][j] = parseInt(prompt("Nhập vào phần tử "+ " Dòng "+i+" Cột "+j))
+    //     }
+    // }
+    // let row = 2;
+    // let col = 4;
+    // let myArr = [];
+    // for (let i = 0; i < row; i++) {
+    //     myArr[i] = [col];
+    //     for (let j = 0; j < col; j++) {
+    //         myArr[i][j] = parseInt(prompt("input number:"));
+    //     }
+    // }
+    // console.log(myArr);
+    let a = parseInt(prompt("Nhập số dòng "));
+    let b = parseInt(prompt("Nhập số cột "));
+    let arr = new Array(a);
+    for (let i=0;i<a;i++){
+        arr[i]=new Array(b)
+    }
+
+    for (let i = 0; i < a; i++) {
+        for (let j = 0; j < b; j++) {
+            arr[i][j] = prompt("Nhập phần tử tại vị trí" + " dòng " + i + " cột " + j)
+        }
+    }
+    alert("Mảng 2 chiều vừa tạo là" +arr)
+    alert("max trong mảng 2 chiều là " + findMax(arr))
+    alert("min trong mảng 2 chiều là " + findMin(arr))
+    //in mảng 2 chiều
+    function findMax(arr) {
+        let max = 0
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                }
+            }
+        }
+        return max
+    }
+
+    function findMin(arr) {
+        let min = arr[0][0]
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] < min) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        return min
+    }
+
+
+</script>
+</html>

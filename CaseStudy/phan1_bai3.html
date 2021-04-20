@@ -6,23 +6,54 @@
 </head>
 <body>
 <script>
-    for (i=5;i>0;i--){
-        for (j=1;j<=5;j++){
-            if(i<=j){
-                document.write("*")
-            }else {
-                document.write("&nbsp&nbsp;")
+    // let h = parseInt(prompt("nhập h"))
+    // for (i=h;i>0;i--){
+    //     for (j=1;j<=h;j++){
+    //         if(i<=j){
+    //             document.write("*")
+    //         }else {
+    //             document.write("&nbsp&nbsp;")
+    //         }
+    //     }
+    //     for (j=2*h-1;j>=h+1;j--){
+    //         if(j>i+h-1){
+    //             document.write("*")
+    //         }else {
+    //             document.write("&nbsp&nbsp;")
+    //         }
+    //     }
+    //     document.write("<br>")
+    //
+    // }
+    // for (i=5;i>0;i--){
+    //     for (j=1;j<=5;j++){
+    //         if(i<=j){
+    //             document.write("*")
+    //         }else {
+    //             document.write("&nbsp&nbsp;")
+    //         }
+    //     }
+    //     for (j=9;j>=6;j--){
+    //         if(j>i+4){
+    //             document.write("*")
+    //         }else {
+    //             document.write("&nbsp&nbsp;")
+    //         }
+    //     }
+    //     document.write("<br>")
+    //
+    // }
+    // ve hinh tam giac can dac co chieu cao h
+    let h=prompt("nhap vao h");
+    for(let i=0;i<h;i++){
+        for(let j=0;j<h*2-1;j++){
+            if(j<=(h-1)-i||j>=(h-1)+i||i===h){
+                document.write("&nbsp&nbsp");
+            }else{
+                document.write("*");
             }
         }
-        for (j=9;j>=6;j--){
-            if(j>i+4){
-                document.write("*")
-            }else {
-                document.write("&nbsp&nbsp;")
-            }
-        }
-        document.write("<br>")
-
+        document.write("<br>");
     }
 </script>
 </body>
