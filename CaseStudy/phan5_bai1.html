@@ -10,11 +10,24 @@
 <script>
     let m = parseInt(prompt("Nhập số dòng m "));
     let n = parseInt(prompt("Nhập số cột n"));
+    let sout = "<table border='1' width='600' cellspacing='0' cellpadding='3'>"
+
     let mt=[]
-    for (i=1;i<m;i++){
-        for (j=1;j<n;j++){
-            mt[i][j]= j
+    for (i=1;i<=m;i++){
+        sout += "<tr>";
+        for (j=1;j<=n;j++){
+            sout += "<td>"+i*j+ "</td>";
+            mt.push(i*j)
         }
     }
+    document.write(sout);
+    let tong =0
+    for (k=0;k<mt.length;k++){
+        if(mt[k]%2==0){
+            tong+= mt[k]
+        }
+    }
+    document.write("ma trận "+ mt)
+    document.write("Tổng các số chẵn trong ma trận là "+ tong)
 </script>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Add New Worker" onclick="addNewWorker()">
+<p id="display"></p>
+<script>
+
+    class Worker {
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        getAge() {
+            return this.age;
+        }
+    }
+
+    let listWorker = [];
+    let worker1 = new Worker(1, "chánh1", 19);
+    let worker2 = new Worker(2, "chánh2", 19);
+    let worker3 = new Worker(3, "chánh3", 19);
+    listWorker.push(worker1, worker2, worker3);
+    display();
+
+    function addNewWorker() {
+        let id = prompt(" nhập vào id: ");
+        let name = prompt(" nhập vào tên: ");
+        let age = prompt(" nhập vào tuổi: ");
+        let worker = new Worker(id, name, age);
+        listWorker.push(worker);
+        display();
+
+    }
+
+    function deleteWorker(index) {
+        let confDel = confirm(" bạn có muốn xóa: " + listWorker[index].getName());
+        if (confDel) {
+            listWorker.splice(index, 1);
+        }
+        display();
+
+    }
+
+    function editWorker(index) {
+        listWorker[index];
+        let check=true;
+        while (check){
+            let menu = prompt("Bạn chon thông tin cần sửa: \n" +
+                "1.Id\n" +
+                "2.Name\n" +
+                "3.Age\n" +
+                "4.Exit"
+            );
+            switch (menu) {
+                case "1":
+                    let idNew =prompt("Nhập id cần chỉnh sửa");
+                    listWorker[index].setId(idNew);
+                    break;
+                case "2":
+                    let nameNew =prompt("Nhập tên cần chỉnh sửa");
+                    listWorker[index].setName(nameNew);
+                    break;
+                case "3":
+                    let ageNew =prompt("Nhập tuổi cần chỉnh sửa");
+                    listWorker[index].setAge(ageNew);
+                    break;
+                case "4":
+                    check =false;
+                    break;
+
+            }
+        }
+        display();
+    }
+
+    function display() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Age</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < listWorker.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + listWorker[i].getId() + '</td>\n' +
+                '        <td>' + listWorker[i].getName() + '</td>\n' +
+                '        <td>' + listWorker[i].getAge() + '</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="editWorker(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Delete" onclick="deleteWorker(' + i + ')"></td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+
+        document.getElementById("display").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>
