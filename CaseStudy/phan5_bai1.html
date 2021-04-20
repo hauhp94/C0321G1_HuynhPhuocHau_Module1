@@ -9,7 +9,7 @@
 </body>
 <script>
     let m = parseInt(prompt("Nhập số dòng m "));
-    let n = parseInt(prompt("Nhập số cột n"));
+    let n = parseInt(prompt("Nhập số cột n "));
     let sout = "<table border='1' width='600' cellspacing='0' cellpadding='3'>"
 
     let mt=[]
@@ -23,7 +23,7 @@
     document.write(sout);
     let tong =0
     for (k=0;k<mt.length;k++){
-        if(mt[k]%2==0){
+        if(mt[k]%2===0){
             tong+= mt[k]
         }
     }

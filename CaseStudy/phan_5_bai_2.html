@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.</title>
+</head>
+<body>
+<p>Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.</p>
+</body>
+<script>
+    let arr = [[1, 2, 3, 4, 5, 6], [4, 5, 6, 7, 8, 9]]
+    let c = []
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 6; j++) {
+            console.log(i + " - " + j);
+            if (isPrime(arr[i][j])) {
+                c.push(arr[i][j])
+            }
+        }
+    }
+
+    alert("Những số nguyên tố trong mảng là "+ c)
+    alert("Số lượng số nguyên tố là "+ c.length)
+
+    function isPrime(n) {
+        for (i = 2; i < n; i++) {
+            let dem = 0
+            if (n % i == 0) {
+                dem++
+            }
+            if (dem == 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+
+</script>
+</html>
