@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demosont</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n = parseInt(prompt("Nhập vào số lượng snt cần hiển thị"))
+    let a = 2
+    let m =0
+
+    do {
+       if(checkSNT(a)){
+            document.write(a+ " ");
+            m++
+        }
+        a++
+    } while (m < n)
+    function checkSNT(n) {
+    let dem =0
+        for(let i=2;i<n;i++){
+            if(n%i===0){
+                dem++
+            }
+            if(dem===0){
+                return true
+            }else return false
+        }
+    }
+    // let n = parseInt(prompt("Nhập vào số để kiểm tra"))
+    // let a = checkSNT(n)
+    // alert(a)
+</script>
+</html>
