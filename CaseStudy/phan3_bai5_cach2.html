@@ -2,78 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>bai 5</title>
 </head>
 <body>
-<script>
-    let check = true;
-    let tong = [];
-    while (check) {
-        let menu = prompt("Mời bạn chọn thức uống: \n" +
-            "1.Cafe\n" +
-            "2.Cam vắt\n" +
-            "3.Nước ép cà rốt\n" +
-            "4.Nước ép cà chua\n" +
-            "5.Nước lọc\n" +
-            "6.Nước dừa\n" +
-            "7.Tính tiền\n" +
-            "8.Exit"
-        );
-        switch (menu) {
-            case "1":
-                let tienCafe = 15000;
-                alert("Cafe có giá là: " + tienCafe + "VND");
-                let soluongCafe = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTienCafe = (tienCafe * soluongCafe);
-                tong.push(tongTienCafe);
-                break;
-            case "2":
-                let tienCamVat = 25000;
-                alert("Cam vắt có giá là: " + tienCamVat + "VND");
-                let soluongCam = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTienCam = (tienCamVat * soluongCam);
-                tong.push(tongTienCam);
-                break;
-            case "3":
-                let tienCaRot = 12000;
-                alert("Nước ép cà rốt có giá là: " + tienCaRot + "VND");
-                let soluongCaRot = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTienCaRot = (tienCaRot * soluongCaRot);
-                tong.push(tongTienCaRot);
-                break;
-            case "4":
-                let tienCachua = 12000;
-                alert("Nước ép cà chua có giá là: " + tienCachua + "VND");
-                let soluongCachua = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTienCachua = (tienCachua * soluongCachua);
-                tong.push(tongTienCachua);
-                break;
-            case "5":
-                let tiennuocLoc = 10000;
-                alert("Nước lọc có giá là: " + tiennuocLoc + "VND");
-                let soluongnuocLoc = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTiennuocLoc = (tiennuocLoc * soluongnuocLoc);
-                tong.push(tongTiennuocLoc);
-                break;
-            case "6":
-                let tiennuocDua = 15000;
-                alert("Nước Dừa có giá là: " + tiennuocDua + "VND");
-                let soluongnuocDua = parseInt(prompt("Nhập số lượng bạn muốn mua"));
-                let tongTiennuocDua = (tiennuocDua * soluongnuocDua);
-                tong.push(tongTiennuocDua);
-                break;
-            case "7":
-                let tongtien = 0;
-                for (let i = 0; i < tong.length; i++) {
-                    tongtien += tong[i];
-                }
-                alert("Tổng tiền cần thanh toán là: " + tongtien);
-                break;
-            case "8":
-                check = false;
-                break;
-        }
-    }
-</script>
+<p>Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:</p>
+<div id="tableProduct"></div>
+<br>
 </body>
+<script>
+    let thucUong = [
+        "Cafe",
+        "Cam vắt",
+        "Nước ép cà rốt",
+        "Nước ép cà chua",
+        "Nước lọc",
+        "Nước dừa",
+    ];
+    let gia = [15000, 20000, 30000, 40000, 10000, 25000]
+    let soluong = []
+    let tong = []
+    let sl = []
+    let tongDonHang=0
+
+    function show() {
+        let tableProduct = "<table border='1' style='width: 600px; height: 400px'>";
+        tableProduct += '<tr>' +
+            '<th><p>Số thứ tự</p></th>' +
+            '<th><p>Tên thức uống</p></th>' +
+            '<th><p>Số lượng</p></th>' +
+            '<th><p>Đơn giá</p></th>' +
+            '<th><p>Tổng tiền </p></th>' +
+            '</tr>'
+        for (let i = 0; i < thucUong.length; i++) {
+            tableProduct += `
+          <tr>
+             <td>`+(i+1)+`</td>
+            <td>`+thucUong[i]+`</td>
+            <td><input type="number" placeholder="Nhập số lượng" id="sl`+i+`"></td>
+            <td><p id="gia">`+gia[i]+`</p></td>
+            <td><p id="tong">`+tong[i]+`</p></td>
+          </tr>
+          `;
+            // soluong.push(document.getElementById(i).value)
+        }
+        tableProduct += "<tr><th colspan='5'><p id='tongDH'></p></th></tr>";
+        tableProduct += "</table>";
+        document.getElementById("tableProduct").innerHTML = tableProduct;
+        document.getElementById('tongDH').innerHTML = "Tổng tiền đơn hàng: "+tongDonHang
+        for (let i=0;i<thucUong.length;i++){
+            tong[i]=gia[i]*sl[i]
+        }
+        console.log("Mảng giá " + gia)
+        console.log("Mảng số lượng" + soluong)
+        console.log(tong)
+    }
+    show();
+    function nhap() {
+        show();
+    }
+
+</script>
 </html>
