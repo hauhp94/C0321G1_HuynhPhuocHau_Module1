@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xo so codegym</title>
+</head>
+<body>
+<h1>xo so codegym</h1>
+<p id="hienThiXoSo"></p>
+<input type="button" value="MuaVe" onclick="muaVe()">
+<input type="button" value="XemKetQua" onclick="xemKetQua()">
+<script>
+    let arr=[];
+    class VietLotCodeGym {
+        constructor(so1,so2,so3,so4,so5,so6) {
+            this._so1 = so1;
+            this._so2 = so2;
+            this._so3 = so3;
+            this._so4 = so4;
+            this._so5 = so5;
+            this._so6 = so6;
+        }
+        getso1() {
+            return this._so1;
+        }
+        setso1(value) {
+            this._so1 = value;
+        }
+        getso2() {
+            return this._so2;
+        }
+        setso2(value) {
+            this._so2 = value;
+        }
+        getso3() {
+            return this._so3;
+        }
+        setso3(value) {
+            this._so3 = value;
+        }
+        getso4() {
+            return this._so4;
+        }
+        setso4(value) {
+            this._so4 = value;
+        }
+        getso5() {
+            return this._so5;
+        }
+        setso5(value) {
+            this._so5 = value;
+        }
+        getso6() {
+            return this._so6;
+        }
+        setso6(value) {
+            this._so6 = value;
+        }
+    }
+    function muaVe(){
+        let check=true;
+        do {
+            let str=prompt('ban co 3 luu chon\n'+
+                '1.Ban muon tu chon va mua them\n'+
+                '2.He thong tu random\n'+
+                '3.thoat');
+            switch (str){
+                case '1':
+                    TuChon();
+                    break
+                case '2':
+                    random();
+                    break
+                case '3':
+                    window.exit();
+            }
+            if (arr.length>=5){
+                alert('ban da het luot mua');
+                check=false;
+            }
+        }while (true)
+    }
+    function TuChon(){
+        let so1=prompt('hay nhap so thu nhat');
+        let so2=prompt('hay nhap so thu hai');
+        let so3=prompt('hay nhap so thu ba');
+        let so4=prompt('hay nhap so thu tu');
+        let so5=prompt('hay nhap so thu nam');
+        let so6=prompt('hay nhap so thu sau');
+        let vietLot=new VietLotCodeGym(so1,so2,so3,so4,so5,so6)
+        arr.push(vietLot);
+        hienThiVeSo();
+    }
+    function hienThiVeSo(){
+        let bang='<table border="1" style="solid-color: red">';
+        for (let i = 0; i < arr.length; i++) {
+            bang+='<tr>'
+                +
+                '    <td style="width: 40px">'+arr[i].getso1()+'</td>'
+                + '    <td style="width: 40px">'+arr[i].getso2()+'</td>'
+                + '    <td style="width: 40px">'+arr[i].getso3()+'</td>'
+                + '    <td style="width: 40px">'+arr[i].getso4()+'</td>'
+                + '    <td style="width: 40px">'+arr[i].getso5()+'</td>'
+                + '    <td style="width: 40px">'+arr[i].getso6()+'</td>'
+                +'</tr>';
+        }
+        bang+='</table>';
+        document.getElementById('hienThiXoSo').innerHTML=bang;
+    }
+    function random(){
+        let so1=Math.floor(Math.random()*99);
+        let so2=Math.floor(Math.random()*99);
+        let so3=Math.floor(Math.random()*99);
+        let so4=Math.floor(Math.random()*99);
+        let so5=Math.floor(Math.random()*99);
+        let so6=Math.floor(Math.random()*99);
+        arr.push(new VietLotCodeGym(so1,so2,so3,so4,so5,so6));
+        hienThiVeSo();
+    }
+    function xemKetQua(){
+        let arr2=[];
+        let so1=Math.floor(Math.random()*99);
+        let so2=Math.floor(Math.random()*99);
+        let so3=Math.floor(Math.random()*99);
+        let so4=Math.floor(Math.random()*99);
+        let so5=Math.floor(Math.random()*99);
+        let so6=Math.floor(Math.random()*99);
+        arr2.push(so1,so2,so3,so4,so5,so6);
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr2[j]==arr[i]._so1&&arr2[j]==arr[i]._so2&&arr2[j]==arr[i]._so3){
+                    alert('chuc mung ban trung giai 3');
+                }else if (arr2[j]==arr[i]._so1&&arr2[j]==arr[i]._so2
+                    &&arr2[j]==arr[i]._so3&&arr2[j]==arr[i]._so4){
+                    alert('chuc mung ban trung giai 2')
+                }else if (arr2[j]==arr[i]._so1&&arr2[j]==arr[i]._so2
+                    &&arr2[j]==arr[i]._so3&&arr2[j]==arr[i]._so4&&arr2[j]==arr[i]._so5){
+                    alert('chuc mung ban trung giai nhat');
+                }else {
+                    alert('chuc ban may man lan sau\n'+
+                        've thu: '+(i+1));
+                    break;
+                }
+            }
+        }
+    }
+    alert(arr2);
+</script>
+</body>
+</html>
