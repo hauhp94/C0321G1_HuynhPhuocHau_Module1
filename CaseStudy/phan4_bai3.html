@@ -11,22 +11,20 @@
 </p>
 </body>
 <script>
-    let dem=0
     let s1 = "aabcc"
     let s2 = "adcaa"
-    let arr1=s1.split("")
-    let arr2=s2.split("")
-    let arr3=[]
-    alert("arr1 là "+ arr1)
-    alert("arr2 là "+ arr2)
+    let arr1 = s1.split("")
+    let arr2 = s2.split("")
+    let arr3 = []
+    alert("arr1 là " + arr1)
+    alert("arr2 là " + arr2)
     for (let i = 0; i < arr1.length; i++) {
-        if (arr2.indexOf(arr1[i]) !== -1 ) {
-            dem++;
+        if (arr2.indexOf(arr1[i]) !== -1) {
             arr3.push(arr1[i])
             arr2[arr2.indexOf(arr1[i])] = ''
         }
     }
-    alert("những kí tự chung là "+ arr3)
-    alert("số lượng kí tự chung là "+ arr3.length)
+    alert("những kí tự chung là " + arr3)
+    alert("số lượng kí tự chung là " + arr3.length)
 </script>
 </html>

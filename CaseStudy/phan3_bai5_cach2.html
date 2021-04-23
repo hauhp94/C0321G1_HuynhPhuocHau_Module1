@@ -19,47 +19,64 @@
         "Nước dừa",
     ];
     let gia = [15000, 20000, 30000, 40000, 10000, 25000]
-    let soluong = []
-    let tong = []
-    let sl = []
-    let tongDonHang=0
+    let tong = [0,0,0,0,0,0];
+    let sl = [0, 0, 0, 0, 0, 0];
 
     function show() {
+
+        for (let i=0;i<thucUong.length;i++){
+            tong[i]=gia[i]*sl[i]
+        }
+console.log(tong)
         let tableProduct = "<table border='1' style='width: 600px; height: 400px'>";
         tableProduct += '<tr>' +
             '<th><p>Số thứ tự</p></th>' +
             '<th><p>Tên thức uống</p></th>' +
             '<th><p>Số lượng</p></th>' +
-            '<th><p>Đơn giá</p></th>' +
-            '<th><p>Tổng tiền </p></th>' +
+            '<th><p>Đơn giá (VNĐ)</p></th>' +
+            '<th><p>Tổng tiền (VNĐ)</p></th>' +
             '</tr>'
         for (let i = 0; i < thucUong.length; i++) {
             tableProduct += `
           <tr>
-             <td>`+(i+1)+`</td>
-            <td>`+thucUong[i]+`</td>
-            <td><input type="number" placeholder="Nhập số lượng" id="sl`+i+`"></td>
-            <td><p id="gia">`+gia[i]+`</p></td>
-            <td><p id="tong">`+tong[i]+`</p></td>
+             <td style="text-align: center">`+(i+1)+`</td>
+            <td style="text-align: center">`+thucUong[i]+`</td>
+            <td><input type="number" placeholder="Nhập số lượng" oninput="nhap(`+i+`)" id="`+i+`" value="`+sl[i]+`" style="text-align: center"></td>
+            <td style="text-align: center"><p id="gia">`+gia[i]+` </p></td>
+            <td style="text-align: center"><p id="tong">`+tong[i]+` </p></td>
           </tr>
           `;
             // soluong.push(document.getElementById(i).value)
         }
-        tableProduct += "<tr><th colspan='5'><p id='tongDH'></p></th></tr>";
+        tableProduct += "<tr><th colspan='5' bgcolor='yellow'><p id='tongDH'></p></th></tr>";
         tableProduct += "</table>";
         document.getElementById("tableProduct").innerHTML = tableProduct;
-        document.getElementById('tongDH').innerHTML = "Tổng tiền đơn hàng: "+tongDonHang
-        for (let i=0;i<thucUong.length;i++){
-            tong[i]=gia[i]*sl[i]
+        // tongDonHang = tong[0]+tong[1]+tong[2]+tong[3]+tong[4]+tong[5]
+        let tongDonHang=0
+        for (let i =0;i<6;i++){
+            tongDonHang += tong[i]
         }
-        console.log("Mảng giá " + gia)
-        console.log("Mảng số lượng" + soluong)
-        console.log(tong)
+        document.getElementById('tongDH').innerHTML = "Tổng tiền đơn hàng: "+tongDonHang + " VNĐ"
+        // console.log("Mảng giá " + gia)
+        // console.log("Mảng số lượng" + soluong)
+        // console.log(tong)
+
     }
     show();
-    function nhap() {
-        show();
-    }
+    function nhap(i) {
 
+        let a = document.getElementById(i).value
+        // for (let i=0;i<6;i++){
+        //     let a = document.getElementById(i).value
+        //     soluong.push(a)
+        // }
+        sl[i] = a
+        // console.log(a)
+        // console.log(i)
+        console.log(sl[i])
+       show();
+    }
+    console.log("mảng số lượng là "+ sl)
+// console.log(soluong)
 </script>
 </html>
