@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,15 +10,15 @@
 </body>
 <script>
     let a = ["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín"]
-    let chuoi = prompt("Nhập vào chuỗi số")
-    let mangChuoi = chuoi.split("")
-    console.log(mangChuoi)
+    let myStr = prompt("Nhập vào chuỗi số")
+    let myArr = myStr.split("")
+    console.log(myArr)
     let newArr = []
-    for (i=0;i<mangChuoi.length;i++){
-        newArr.push(a[mangChuoi[i]])
+    for (i=0;i<myArr.length;i++){
+        newArr.push(a[myArr[i]])
     }
     newArr1=newArr.join(" ");
-    document.write("Chuỗi số vừa nhập là: " +chuoi+"<br>");
+    document.write("Chuỗi số vừa nhập là: " + myStr+ "<br>");
     document.write("Sau khi đổi số thành chữ: "+ newArr1);
 </script>
 </html>

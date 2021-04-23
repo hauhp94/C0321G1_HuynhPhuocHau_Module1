@@ -14,18 +14,19 @@
     let dem=0
     let s1 = "aabcc"
     let s2 = "adcaa"
-    let str = "";
-    let str1 = "";
-    for (let i = 0; i < s1.length; i++) {
-        if (s2.indexOf(s1[i]) !== -1 && str.indexOf(s1[i]) === -1) {
+    let arr1=s1.split("")
+    let arr2=s2.split("")
+    let arr3=[]
+    alert("arr1 là "+ arr1)
+    alert("arr2 là "+ arr2)
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr2.indexOf(arr1[i]) !== -1 ) {
             dem++;
-            str1=str.concat(s1[i]);
+            arr3.push(arr1[i])
+            arr2[arr2.indexOf(arr1[i])] = ''
         }
     }
-
-    alert(s1)
-    alert(s2)
-    alert(str1)
-    alert(dem)
+    alert("những kí tự chung là "+ arr3)
+    alert("số lượng kí tự chung là "+ arr3.length)
 </script>
 </html>

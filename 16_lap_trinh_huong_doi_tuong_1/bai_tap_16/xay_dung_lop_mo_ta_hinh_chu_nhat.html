@@ -5,7 +5,7 @@
     <title>hinh chu nhat</title>
 </head>
 <body>
-<canvas id="myCanvas" width="500" height="300" style="border: 10px solid"></canvas>
+<canvas id="myCanvas" width="500" height="300" style="border: 1px solid"></canvas>
 </body>
 <script>
     class Rectangle{
@@ -23,9 +23,9 @@
             this.veCanvas = function () {
                 var c = document.getElementById("myCanvas");
                 var ctx = c.getContext("2d");
-                ctx.fillStyle = "#FF0000";
-                ctx.fillRect(20,20,dai,rong);
-                ctx.clearRect(30,30,dai-20,rong-20);
+                ctx.rect(20,20,dai,rong);
+                ctx.strokeStyle = "red";
+                ctx.stroke()
             }
 
         }
