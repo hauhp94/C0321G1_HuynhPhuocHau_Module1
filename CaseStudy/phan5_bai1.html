@@ -12,22 +12,22 @@
     let n = parseInt(prompt("Nhập số cột n "));
     let sout = "<table border='1' width='600' cellspacing='0' cellpadding='3'>"
 
-    let mt=[]
-    for (i=1;i<=m;i++){
+    let mt = []
+    for (let i = 1; i <= m; i++) {
         sout += "<tr>";
-        for (j=1;j<=n;j++){
-            sout += "<td>"+i*j+ "</td>";
-            mt.push(i*j)
+        for (let j = 1; j <= n; j++) {
+            sout += "<td>" + i * j + "</td>";
+            mt.push(i * j)
         }
     }
     document.write(sout);
-    let tong =0
-    for (k=0;k<mt.length;k++){
-        if(mt[k]%2===0){
-            tong+= mt[k]
+    let tong = 0
+    for (let i = 0; i < mt.length; i++) {
+        if (mt[i] % 2 === 0) {
+            tong += mt[i]
         }
     }
-    document.write("ma trận "+ mt)
-    document.write("Tổng các số chẵn trong ma trận là "+ tong)
+    // document.write("ma trận "+ mt)
+    document.write("Tổng các số chẵn trong ma trận là " + tong)
 </script>
 </html>

@@ -16,7 +16,7 @@
     let b = [7, 2, 5, 4, 6, 3, 5, 3]
     let c = []
     for (i = 0; i < b.length; i++) {
-        if (a.indexOf(b[i]) === -1) {
+        if (a.indexOf(b[i]) === -1&& c.indexOf(b[i])==-1) {
             c.push(b[i])
             console.log(i)
         }

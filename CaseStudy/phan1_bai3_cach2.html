@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cach2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let h = parseInt(prompt("nhập h"))
+    for (let i = 1; i <= h; i++) {
+        for (j = h; j >= 1; j--) {
+            if (j <= i) {
+                document.write("*")
+            } else {
+                document.write("&ensp;")
+            }
+        }
+        for (j = h + 1; j <= 2 * h + 1; j++) {
+            if (j < i + h) {
+                document.write("*")
+            }
+        }
+        document.write("<br>")
+    }
+</script>
+</html>

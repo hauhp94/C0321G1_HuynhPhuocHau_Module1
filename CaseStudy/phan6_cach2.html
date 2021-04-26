@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phan6 cach 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Lottery {
+        constructor(number1, number2, number3, number4, number5, number6, grade = "") {
+            this.Number1 = number1
+            this.Number2 = number2
+            this.Number3 = number3
+            this.Number4 = number4
+            this.Number5 = number5
+            this.Number6 = number6
+            this.Grade = grade
+        }
+
+        setNumber1(num1) {
+            this.Number1 = num1
+        }
+
+        getNumber1() {
+            return this.Number1;
+        }
+        setNumber2(num2) {
+            this.Number2 = num2
+        }
+
+        getNumber2() {
+            return this.Number2;
+        }
+        setNumber3(num3) {
+            this.Number3 = num3
+        }
+
+        getNumber3() {
+            return this.Number3;
+        }
+        setNumber4(num4) {
+            this.Number4 = num4
+        }
+
+        getNumber4() {
+            return this.Number4;
+        }
+        setNumber5(num5) {
+            this.Number5 = num5
+        }
+
+        getNumber5() {
+            return this.Number5;
+        }
+        setNumber6(num6) {
+            this.Number6 = num6
+        }
+
+        getNumber6() {
+            return this.Number6;
+        }
+        setGrade(grade){
+            this.Grade = grade;
+        }
+        getGrade(){
+            return this.Grade;
+        }
+        getRamdomNumber(){
+            this.setNumber1(Math.floor(Math.random()*99));
+            this.setNumber2(Math.floor(Math.random()*99));
+            this.setNumber3(Math.floor(Math.random()*99));
+            this.setNumber4(Math.floor(Math.random()*99));
+            this.setNumber5(Math.floor(Math.random()*99));
+            this.setNumber6(Math.floor(Math.random()*99));
+        }
+    }
+</script>
+</html>

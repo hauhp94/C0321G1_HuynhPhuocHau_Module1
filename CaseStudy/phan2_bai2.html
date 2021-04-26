@@ -21,6 +21,8 @@
         let a = document.getElementById("kitu").value
         if (arr.indexOf(a) !== -1) {
             document.getElementById("ketqua").innerText = " Đây là một nguyên âm"
+        } else if (!(isNaN(a))) {
+            document.getElementById("ketqua").innerText = "Không phải chữ"
         } else {
             document.getElementById("ketqua").innerText = " Đây là một phụ âm"
         }
